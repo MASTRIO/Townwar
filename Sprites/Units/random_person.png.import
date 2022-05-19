@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds05j8u8xrvdv"
-path="res://.godot/imported/selection.png-2f34c40661daa1487cc0df5ad3828cc5.ctex"
+uid="uid://4u5k7ly6r101"
+path="res://.godot/imported/random_person.png-8d9642769b61cb134fb85a74fdfe44c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/selection.png"
-dest_files=["res://.godot/imported/selection.png-2f34c40661daa1487cc0df5ad3828cc5.ctex"]
+source_file="res://Sprites/Units/random_person.png"
+dest_files=["res://.godot/imported/random_person.png-8d9642769b61cb134fb85a74fdfe44c2.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

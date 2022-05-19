@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpabehhmlb1my"]
+
+[ext_resource type="Script" path="res://Scripts/Units/random_person.gd" id="1_o62h7"]
+[ext_resource type="Texture2D" uid="uid://4u5k7ly6r101" path="res://Sprites/Units/random_person.png" id="2_sg6fx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhvlr"]
+size = Vector2(14, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbnw1"]
+atlas = ExtResource( "2_sg6fx" )
+region = Rect2(18, 3, 29, 61)
+
+[node name="RandomPerson" type="Area2D" groups=["RandomPerson", "Unit"]]
+script = ExtResource( "1_o62h7" )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( "RectangleShape2D_bhvlr" )
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+z_index = 25
+texture = SubResource( "AtlasTexture_bbnw1" )
+
+[connection signal="area_entered" from="." to="." method="_on_hitbox_entered"]
+[connection signal="area_exited" from="." to="." method="_on_random_person_area_exited"]
