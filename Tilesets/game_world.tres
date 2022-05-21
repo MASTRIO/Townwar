@@ -1,7 +1,8 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://c7gu1ktpvmxnc"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://c7gu1ktpvmxnc"]
 
 [ext_resource type="Texture2D" uid="uid://xnm4vlasm0ak" path="res://Sprites/GroundTiles/grass.png" id="1_wbpqs"]
 [ext_resource type="Texture2D" uid="uid://ds05j8u8xrvdv" path="res://Sprites/selection.png" id="2_r7iq7"]
+[ext_resource type="Texture2D" uid="uid://datyf2sc6xeh2" path="res://Sprites/Buildings/castle.png" id="4_a0wf3"]
 [ext_resource type="Texture2D" uid="uid://di185xbr1t0kl" path="res://Sprites/Buildings/house.png" id="4_cod67"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d1vq7"]
@@ -38,6 +39,17 @@ texture_region_size = Vector2i(64, 64)
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bjp2d"]
+resource_name = "Castle"
+texture = ExtResource( "4_a0wf3" )
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+
 [resource]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
@@ -45,3 +57,4 @@ navigation_layer_0/layers = 15
 sources/1 = SubResource( "TileSetAtlasSource_d1vq7" )
 sources/3 = SubResource( "TileSetAtlasSource_nt5ah" )
 sources/6 = SubResource( "TileSetAtlasSource_75p8v" )
+sources/7 = SubResource( "TileSetAtlasSource_bjp2d" )

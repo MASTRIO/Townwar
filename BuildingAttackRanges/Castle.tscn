@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c67pr0vwunm08"]
+
+[ext_resource type="Script" path="res://Scripts/building_attack_range.gd" id="1_hwfhq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2gj7k"]
+radius = 108.116
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpy7d"]
+
+[node name="Castle" type="Area2D"]
+script = ExtResource( "1_hwfhq" )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 100
+shape = SubResource( "CircleShape2D_2gj7k" )
+
+[node name="Area2D" type="Area2D" parent="." groups=["Castle"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( "RectangleShape2D_xpy7d" )
+
+[connection signal="area_entered" from="." to="." method="_on_range_entered"]
+[connection signal="area_exited" from="." to="." method="_on_range_exited"]

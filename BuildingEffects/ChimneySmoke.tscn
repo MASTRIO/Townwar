@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://34dekpph8bdp"]
+
+[ext_resource type="Texture2D" uid="uid://di185xbr1t0kl" path="res://Sprites/Buildings/house.png" id="1_ep6sv"]
+[ext_resource type="Texture2D" uid="uid://bpydw38wxvm61" path="res://Sprites/Particles/smokey_smoke.png" id="2_j6jyw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1tsb"]
+atlas = ExtResource( "1_ep6sv" )
+region = Rect2(2, 3, 60, 60)
+
+[sub_resource type="Curve" id="Curve_ah2jo"]
+_data = [Vector2(0, 0.411043), 0.0, 0.0, 0, 0, Vector2(0.2625, 0.91411), 0.0, 0.0, 0, 0, Vector2(0.579167, 1), -0.474965, -0.474965, 0, 0, Vector2(0.929167, 0.754601), 0.0, 0.0, 0, 0, Vector2(1, 0.226994), 0.0, 0.0, 0, 0]
+
+[sub_resource type="CurveTexture" id="CurveTexture_h0n7h"]
+curve = SubResource( "Curve_ah2jo" )
+
+[sub_resource type="ParticlesMaterial" id="ParticlesMaterial_gj5rl"]
+lifetime_randomness = 0.3
+emission_shape = 3
+emission_box_extents = Vector3(50, 3, 1)
+particle_flag_disable_z = true
+spread = 160.19
+gravity = Vector3(0, -98, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+angular_velocity_max = 33.89
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = 20.0
+angle_max = 40.0
+scale_min = 0.7
+scale_max = 1.7
+scale_curve = SubResource( "CurveTexture_h0n7h" )
+
+[node name="ChimneySmoke" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.5, 0.5)
+texture = SubResource( "AtlasTexture_s1tsb" )
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-8, -13)
+scale = Vector2(0.05, 0.05)
+z_index = 40
+amount = 13
+lifetime = 3.0
+speed_scale = 1.5
+explosiveness = 0.2
+process_material = SubResource( "ParticlesMaterial_gj5rl" )
+texture = ExtResource( "2_j6jyw" )

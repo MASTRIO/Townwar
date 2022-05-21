@@ -35,7 +35,13 @@ layer_2/tile_data = PackedInt32Array()
 
 [node name="Buildings" type="Node2D" parent="."]
 
+[node name="BuildingAttackRanges" type="Node2D" parent="."]
+
+[node name="BuildingEffects" type="Node2D" parent="."]
+
 [node name="Units" type="Node2D" parent="."]
+
+[node name="Projectiles" type="Node2D" parent="."]
 
 [node name="MouseClicky" type="Position2D" parent="."]
 
