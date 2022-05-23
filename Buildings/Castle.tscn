@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://e8u6fhmcv8xt"]
+
+[ext_resource type="Script" path="res://addons/townwar/building.gd" id="1_8kp7m"]
+[ext_resource type="Texture2D" uid="uid://datyf2sc6xeh2" path="res://Sprites/Buildings/castle.png" id="2_xdhhv"]
+[ext_resource type="Script" path="res://Scripts/building_attack_range.gd" id="3_1c5x7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68maa"]
+resource_local_to_scene = true
+atlas = ExtResource( "2_xdhhv" )
+region = Rect2(12, 3, 40, 61)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lwmuu"]
+radius = 278.016
+
+[node name="Castle" type="Node2D"]
+script = ExtResource( "1_8kp7m" )
+red_building_x = 12.0
+blue_building_x = 76.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -24)
+texture = SubResource( "AtlasTexture_68maa" )
+
+[node name="AttackRange" type="Area2D" parent="."]
+z_index = 50
+z_as_relative = false
+disable_mode = 2
+script = ExtResource( "3_1c5x7" )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+shape = SubResource( "CircleShape2D_lwmuu" )
+
+[connection signal="area_entered" from="AttackRange" to="AttackRange" method="_on_range_entered"]
+[connection signal="area_exited" from="AttackRange" to="AttackRange" method="_on_range_exited"]

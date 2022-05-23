@@ -5,8 +5,6 @@ extends Area2D
 
 var timer = 0
 
-var team = 0
-
 var enemies_in_range = []
 
 func _physics_process(delta):
@@ -20,15 +18,17 @@ func _physics_process(delta):
 			projectile_instance.position = position
 			projectile_instance.target = enemies_in_range[0].position
 			
-			get_parent().get_parent().get_node("Projectiles").add_child(projectile_instance)
+			get_parent().get_parent().get_parent().get_node("Projectiles").add_child(projectile_instance)
 
 func _on_range_entered(area):
-	if area.is_in_group("Unit") and area.team != team:
+	print("A")
+	if area.is_in_group("Unit") and area.team != get_parent().team:
+		print("sus!")
 		enemies_in_range.append(area)
 
 func _on_range_exited(area):
 	if area.is_in_group("Unit"):
-		if area in enemies_in_range and area.team != team:
+		if area in enemies_in_range and area.team != get_parent().team:
 			var counter = 0
 			for unit in enemies_in_range:
 				if area == unit:

@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://dpabehhmlb1my"]
 
-[ext_resource type="Script" path="res://Scripts/Units/random_person.gd" id="1_o62h7"]
+[ext_resource type="Script" path="res://addons/townwar/unit.gd" id="1_ha1ci"]
 [ext_resource type="Texture2D" uid="uid://4u5k7ly6r101" path="res://Sprites/Units/random_person.png" id="2_sg6fx"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhvlr"]
-size = Vector2(14, 22)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ceoiy"]
+size = Vector2(12, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbnw1"]
 resource_local_to_scene = true
@@ -12,16 +12,15 @@ atlas = ExtResource( "2_sg6fx" )
 region = Rect2(14, 1, 36, 61)
 filter_clip = true
 
-[node name="RandomPerson" type="Area2D" groups=["RandomPerson", "Unit"]]
-script = ExtResource( "1_o62h7" )
+[node name="RandomPerson" type="Area2D" groups=["Unit"]]
+script = ExtResource( "1_ha1ci" )
+health = 100
+attack = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( "RectangleShape2D_bhvlr" )
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource( "RectangleShape2D_ceoiy" )
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 z_index = 25
 texture = SubResource( "AtlasTexture_bbnw1" )
-
-[connection signal="area_entered" from="." to="." method="_on_hitbox_entered"]
-[connection signal="area_exited" from="." to="." method="_on_random_person_area_exited"]

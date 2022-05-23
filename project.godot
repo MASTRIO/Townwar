@@ -24,6 +24,10 @@ Global="*res://Scripts/global.gd"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/townwar/plugin.cfg")
+
 [input]
 
 pan_left={
