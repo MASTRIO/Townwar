@@ -13,7 +13,8 @@ var blue_health = 1000
 
 var red_buildings = []
 var blu_buildings = []
+var next_building_id = 0
 var buildings = []
 
-var next_id = 0
+var next_unit_id = 0
 var units = []

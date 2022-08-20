@@ -15,7 +15,7 @@ func _physics_process(delta):
 		if len(enemies_in_range) > 0:
 			var projectile_instance = projectile.instantiate()
 			
-			projectile_instance.position = position
+			projectile_instance.position = self.get_global_transform().origin
 			projectile_instance.target = enemies_in_range[0].position
 			
 			get_parent().get_parent().get_parent().get_node("Projectiles").add_child(projectile_instance)
